@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golosinas Aries - Catálogo</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <!-- Cabecera siempre visible (logo, título y botón Me Gusta con contador) -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golosinas Aries" class="logo" />
+    <h1>🍭 Golosinas Aries 🍭 - Catálogo</h1>
+    <button id="ver-megusta" aria-label="Ver lista de productos Me Gusta" class="boton-corazon">
+      💖
+      <span id="contador-megusta" class="contador-megusta" hidden>0</span>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Catálogo</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="hero" aria-label="Portada">
+      <img src="img/logo.png" alt="Portada Golosinas Aries" />
+      <div class="texto-hero">
+        <h2>Bienvenid@s a Golosinas Aries 🍭</h2>
+        <p>Combos únicos desde la costa de Miramar 🌊</p>
+      </div>
+    </section>
+
+    <!-- Productos -->
+    <section aria-labelledby="titulo-productos">
+      <h2 id="titulo-productos">Nuestros Productos</h2>
+      <div class="tarjetas-container">
+        <article class="tarjeta" data-id="gomitas-ojos">
+          <img src="img/ojo.png" alt="Gomitas con forma de ojos" />
+          <h3>Gomitas con forma de ojos</h3>
+          <p class="precio">$20</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+
+        <article class="tarjeta" data-id="auto-caramelos">
+          <img src="img/auto.png" alt="Auto relleno de caramelos" />
+          <h3>Auto relleno de caramelos</h3>
+          <p class="precio">$25</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+
+        <article class="tarjeta" data-id="chupetin">
+          <img src="img/chupetin.png" alt="Chupetines" />
+          <h3>Chupetines</h3>
+          <p class="precio">$30</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Información adicional -->
+    <section class="bloque" aria-label="Información adicional sobre combos">
+      <h3>Sobre nuestros combos 🍬</h3>
+      <p>
+        Nuestros combos de golosinas están pensados para brindar variedad y diversión, ideales para compartir en fiestas o disfrutar en cualquier momento especial. Utilizamos productos frescos y de calidad para asegurar la mejor experiencia.
+      </p>
+    </section>
+  </main>
+
+  <!-- Panel lateral Me Gusta -->
+  <aside id="lista-megusta" aria-label="Lista de productos Me Gusta" class="panel-megusta" hidden>
+    <button id="cerrar-megusta" aria-label="Cerrar lista Me Gusta" class="cerrar-panel">✖️</button>
+    <h2>Me Gusta 💖</h2>
+    <ul id="megusta-listado" class="megusta-lista">
+      <!-- Productos agregados por JS -->
+    </ul>
+  </aside>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Hacemos envíos a todo el país 🍭</p>
+    <p>
+      Encontranos 📍
+      <a href="https://www.google.com/maps/place/Miramar,+Provincia+de+Buenos+Aires" target="_blank" rel="noopener noreferrer">
+        Miramar 🌊 Buenos Aires
+      </a> 
+      🧁 ¡Los esperamos! 🍭
+    </p>
+  </footer>
+
+  <script src="js/megusta.js"></script>
+</body>
+</html>
