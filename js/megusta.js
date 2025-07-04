@@ -1,5 +1,3 @@
-// megusta.js - controla la lista Me Gusta, contador y panel lateral con auto cierre
-
 const btnVerMeGusta = document.getElementById('ver-megusta');
 const panelMeGusta = document.getElementById('lista-megusta');
 const btnCerrarMeGusta = document.getElementById('cerrar-megusta');
@@ -9,37 +7,46 @@ const contadorMeGusta = document.getElementById('contador-megusta');
 let productosMeGusta = [];
 let timeoutCerrar = null;
 
-// Actualiza el contador visible en el botón Me Gusta
 function actualizarContador() {
   const cantidad = productosMeGusta.length;
-  if (cantidad === 0) {
-    contadorMeGusta.hidden = true;
-  } else {
-    contadorMeGusta.hidden = false;
-    contadorMeGusta.textContent = cantidad;
-  }
+  contadorMeGusta.hidden = cantidad === 0;
+  contadorMeGusta.textContent = cantidad;
 }
 
-// Renderiza la lista de Me Gusta en el panel lateral
 function renderizarLista() {
   listaMeGusta.innerHTML = '';
-  productosMeGusta.forEach((producto) => {
+  productosMeGusta.forEach((producto, index) => {
     const li = document.createElement('li');
     li.textContent = producto;
+
+    // Botón para eliminar
+    const btnEliminar = document.createElement('button');
+    btnEliminar.textContent = '❌';
+    btnEliminar.setAttribute('aria-label', `Quitar ${producto} de Me Gusta`);
+    btnEliminar.style.marginLeft = '10px';
+    btnEliminar.style.cursor = 'pointer';
+    btnEliminar.style.background = 'none';
+    btnEliminar.style.border = 'none';
+    btnEliminar.style.color = '#bc1888';
+    btnEliminar.style.fontWeight = 'bold';
+
+    btnEliminar.addEventListener('click', () => {
+      productosMeGusta.splice(index, 1);
+      actualizarContador();
+      renderizarLista();
+    });
+
+    li.appendChild(btnEliminar);
     listaMeGusta.appendChild(li);
   });
 }
 
-// Muestra el panel Me Gusta y programa cierre automático
 function mostrarPanel() {
   panelMeGusta.classList.add('activo');
   if (timeoutCerrar) clearTimeout(timeoutCerrar);
-  timeoutCerrar = setTimeout(() => {
-    ocultarPanel();
-  }, 5000);
+  timeoutCerrar = setTimeout(ocultarPanel, 5000);
 }
 
-// Oculta el panel Me Gusta y cancela cierre automático
 function ocultarPanel() {
   panelMeGusta.classList.remove('activo');
   if (timeoutCerrar) {
@@ -48,7 +55,6 @@ function ocultarPanel() {
   }
 }
 
-// Toggle panel al click en el corazón
 btnVerMeGusta.addEventListener('click', () => {
   if (panelMeGusta.classList.contains('activo')) {
     ocultarPanel();
@@ -57,28 +63,18 @@ btnVerMeGusta.addEventListener('click', () => {
   }
 });
 
-// Cierra panel con botón ✖️
-btnCerrarMeGusta.addEventListener('click', () => {
-  ocultarPanel();
-});
+btnCerrarMeGusta.addEventListener('click', ocultarPanel);
 
-// Agrega producto a lista Me Gusta al hacer click en botón
-document.querySelectorAll('.agregar-carrito').forEach((boton) => {
+document.querySelectorAll('.megusta-btn').forEach((boton) => {
   boton.addEventListener('click', (e) => {
     const tarjeta = e.target.closest('.tarjeta');
     if (!tarjeta) return;
-
     const nombreProducto = tarjeta.querySelector('h3').textContent;
-
     if (!productosMeGusta.includes(nombreProducto)) {
       productosMeGusta.push(nombreProducto);
       actualizarContador();
       renderizarLista();
-      mostrarPanel(); // mostrar panel cuando agrego
+      mostrarPanel();
     }
   });
 });
-
-// Inicialización
-actualizarContador();
-renderizarLista();

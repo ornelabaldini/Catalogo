@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Cabecera siempre visible (logo, título y botón Me Gusta con contador) -->
+  <!-- Cabecera -->
   <header>
     <img src="img/logo.png" alt="Logo Golosinas Aries" class="logo" />
     <h1>🍭 Golosinas Aries 🍭 - Catálogo</h1>
@@ -26,60 +26,145 @@
     </nav>
   </header>
 
-  <main>
-    <!-- Portada -->
-    <section class="hero" aria-label="Portada">
-      <img src="img/logo.png" alt="Portada Golosinas Aries" />
-      <div class="texto-hero">
-        <h2>Bienvenid@s a Golosinas Aries 🍭</h2>
-        <p>Combos únicos desde la costa de Miramar 🌊</p>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero" aria-label="Portada">
+    <img src="img/logo.png" alt="Portada Golosinas Aries" />
+    <div class="texto-hero">
+      <h2>Bienvenid@s a Golosinas Aries 🍭</h2>
+      <p>Combos únicos desde la costa de Miramar 🌊</p>
+    </div>
+  </section>
 
-    <!-- Productos -->
+  <!-- Productos -->
+  <main>
     <section aria-labelledby="titulo-productos">
       <h2 id="titulo-productos">Nuestros Productos</h2>
       <div class="tarjetas-container">
-        <article class="tarjeta" data-id="gomitas-ojos">
-          <img src="img/ojo.png" alt="Gomitas con forma de ojos" />
-          <h3>Gomitas con forma de ojos</h3>
-          <p class="precio">$20</p>
+
+        <!-- Producto 1 -->
+        <article class="tarjeta" data-id="producto-1">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <!-- Imágenes repetidas para carrusel -->
+              <img src="img/ojo.png" alt="Producto 1 - imagen 1" />
+              <img src="img/ojo.png" alt="Producto 1 - imagen 2" />
+              <img src="img/ojo.png" alt="Producto 1 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
+          <h3>Ojos</h3>
+          <p class="precio">$$$</p>
           <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
         </article>
 
-        <article class="tarjeta" data-id="auto-caramelos">
-          <img src="img/auto.png" alt="Auto relleno de caramelos" />
-          <h3>Auto relleno de caramelos</h3>
-          <p class="precio">$25</p>
+        <!-- Producto 2 -->
+        <article class="tarjeta" data-id="producto-2">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <img src="img/auto.png" alt="Producto 2 - imagen 1" />
+              <img src="img/auto.png" alt="Producto 2 - imagen 2" />
+              <img src="img/auto.png" alt="Producto 2 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
+          <h3>Dispenser</h3>
+          <p class="precio">$$$</p>
           <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
         </article>
 
-        <article class="tarjeta" data-id="chupetin">
-          <img src="img/chupetin.png" alt="Chupetines" />
+        <!-- Producto 3 -->
+        <article class="tarjeta" data-id="producto-3">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <img src="img/chupetin.png" alt="Producto 3 - imagen 1" />
+              <img src="img/chupetin.png" alt="Producto 3 - imagen 2" />
+              <img src="img/chupetin.png" alt="Producto 3 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
           <h3>Chupetines</h3>
-          <p class="precio">$30</p>
+          <p class="precio">$$$</p>
           <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
         </article>
+
+        <!-- Producto  4-->
+        <article class="tarjeta" data-id="producto-2">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <img src="img/monedas.png" alt="Producto 4 - imagen 1" />
+              <img src="img/monedas.png" alt="Producto 4 - imagen 2" />
+              <img src="img/monedas.png" alt="Producto 4 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
+          <h3>Monedas de chocolate</h3>
+          <p class="precio">$$$</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+
+        <!-- Producto 5 -->
+        <article class="tarjeta" data-id="producto-2">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <img src="img/latas.png" alt="Producto 5 - imagen 1" />
+              <img src="img/latas.png" alt="Producto 5 - imagen 2" />
+              <img src="img/latas.png" alt="Producto 5 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
+          <h3>latas</h3>
+          <p class="precio">$$$</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+
+         <!-- Producto 6 -->
+         <article class="tarjeta" data-id="producto-2">
+          <div class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+            <div class="carousel">
+              <img src="img/burbujero.png" alt="Producto 6 - imagen 1" />
+              <img src="img/burbujero.png" alt="Producto 6 - imagen 2" />
+              <img src="img/burbujero.png" alt="Producto 6 - imagen 3" />
+            </div>
+            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+          </div>
+          <h3>burbujero</h3>
+          <p class="precio">$$$</p>
+          <button class="megusta-btn agregar-carrito">Agregar a Me Gusta 💖</button>
+        </article>
+
       </div>
     </section>
 
     <!-- Información adicional -->
-    <section class="bloque" aria-label="Información adicional sobre combos">
+    <section class="bloque" aria-label="Sobre los combos">
       <h3>Sobre nuestros combos 🍬</h3>
       <p>
-        Nuestros combos de golosinas están pensados para brindar variedad y diversión, ideales para compartir en fiestas o disfrutar en cualquier momento especial. Utilizamos productos frescos y de calidad para asegurar la mejor experiencia.
+        Nuestros combos de golosinas están pensados para brindar variedad y diversión, ideales para compartir en fiestas o disfrutar en cualquier momento especial.
       </p>
     </section>
   </main>
 
-  <!-- Panel lateral Me Gusta -->
+  <!-- Panel Me Gusta -->
   <aside id="lista-megusta" aria-label="Lista de productos Me Gusta" class="panel-megusta" hidden>
     <button id="cerrar-megusta" aria-label="Cerrar lista Me Gusta" class="cerrar-panel">✖️</button>
     <h2>Me Gusta 💖</h2>
     <ul id="megusta-listado" class="megusta-lista">
-      <!-- Productos agregados por JS -->
+      <!-- Productos agregados con JS -->
     </ul>
   </aside>
+
+  <!-- Modal para ver imagen en grande -->
+  <div id="modal" class="modal" hidden>
+    <span id="modal-cerrar" class="modal-cerrar" role="button" aria-label="Cerrar imagen ampliada">✖</span>
+    <img id="modal-img" src="" alt="Imagen ampliada" />
+    <p id="modal-title"></p>
+  </div>
 
   <!-- Pie de página -->
   <footer>
@@ -89,10 +174,13 @@
       <a href="https://www.google.com/maps/place/Miramar,+Provincia+de+Buenos+Aires" target="_blank" rel="noopener noreferrer">
         Miramar 🌊 Buenos Aires
       </a> 
-      🧁 ¡Los esperamos! 🍭
+      🧁 ¡Los esperamos!
     </p>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/megusta.js"></script>
+  <script src="js/carousel.js"></script>
+
 </body>
 </html>

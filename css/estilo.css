@@ -1,43 +1,50 @@
-/*-- 1. Cabecera siempre visible: header fijo y estilo de logo y título --*/
+/* Fuente principal */
 body {
   font-family: 'IM Fell English SC', serif;
-  margin: 0; 
+  margin: 0;
   padding: 0;
-  background-color: #bfadf1;
-  color: #1a1a1a;
-  font-weight: bold; 
+  background-color: #fff2fc;
+  color: #2d0039;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Cabecera fija */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 10px 20px;
+  background-color: #ffe0f7;
+  border-bottom: 2px solid #d97ec8;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #f9e6ff;
-  border-bottom: 2px solid #d9b3ff;
   z-index: 1000;
-  gap: 20px;
   box-sizing: border-box;
+  gap: 10px;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
 }
 
 .logo {
   height: 40px;
-  width: auto;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8em;
-  flex-shrink: 0;
+  font-size: 1.5em;
+  flex-grow: 1;
+  text-align: center;
 }
 
-/* Botón corazón Me Gusta con contador */
+/* Botón Me Gusta */
 .boton-corazon {
   position: relative;
   background: none;
@@ -57,18 +64,17 @@ header h1 {
   padding: 2px 6px;
   font-size: 0.75rem;
   font-weight: bold;
-  user-select: none;
 }
 
-/*-- Menú de navegación --*/
+/* Navegación */
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   list-style: none;
-  margin: 0;
   padding: 0;
-  flex-grow: 1;
-  justify-content: flex-end;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -77,47 +83,18 @@ nav a {
   font-weight: bold;
 }
 
-/* Footer centrado */
-footer {
-  text-align: center;
-  margin-top: auto;
-  padding: 15px 10px;
-  background-color: #f9e6ff;
-  border-top: 2px solid #d9b3ff;
-  color: #6a1b9a;
-  font-weight: bold;
-}
-
-footer a {
-  color: #bc1888;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-main {
-  flex-grow: 1;
-  padding: 20px;
-  margin-top: 60px;
-}
-
-/* Portada */
+/* Hero */
 .hero {
+  margin-top: 80px;
+  height: 250px;
   position: relative;
-  width: 100%;
-  height: 300px;
   overflow: hidden;
-  margin-bottom: 30px;
-  border: 5px solid #aaa;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .texto-hero {
@@ -125,101 +102,125 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 10px;
   color: white;
   text-align: center;
-  text-shadow: 2px 2px 5px black;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 10px solid #aaa;
 }
 
-/* Productos */
+/* Contenedor tarjetas */
 .tarjetas-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
-  background-color: #bc1888;
-  box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
 }
 
+/* Tarjeta producto */
 .tarjeta {
-  padding: 30px;
-  border: 10px solid #aaa;
-  border-radius: 8px;
-  text-align: center;
-  box-sizing: border-box;
-  flex: 1 1 calc(33.33% - 20px);
-  min-width: 250px;
   background: white;
+  border: 3px solid #d9b3ff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(153, 102, 204, 0.3);
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.tarjeta img {
+/* Carrusel */
+.carousel-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  overflow: hidden;
 }
 
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.carousel img {
+  min-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #a566c1;
+  padding: 5px 10px;
+}
+
+.carousel-btn.prev {
+  left: 5px;
+}
+
+.carousel-btn.next {
+  right: 5px;
+}
+
+/* Precio y botón */
 .precio {
-  color: #070008;
+  color: #333;
   font-size: 1.2em;
 }
 
-/* Botones */
 button {
-  background-color: #d1a3ff;
-  border: none;
+  background-color: #bc1888;
   color: white;
-  padding: 10px 15px;
-  font-family: 'IM Fell English SC', serif;
-  font-weight: bold;
+  border: none;
+  padding: 10px;
   border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-family: 'IM Fell English SC', serif;
 }
 
 button:hover {
   background-color: #a566c1;
 }
 
-.agregar-carrito {
-  background-color: #bc1888;
-  color: white;
-}
-
-.agregar-carrito:hover {
-  background-color: #a566c1;
-}
-
-/* Bloque 300x300 */
+/* Bloque adicional */
 .bloque {
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  background-color: #fff;
-  border: 2px solid #888;
-  padding: 15px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  overflow: auto;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffe6f7;
+  border: 2px solid #d97ec8;
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Panel lateral Me Gusta - aparece / desaparece con transición */
+/* Panel lateral Me Gusta */
 .panel-megusta {
   position: fixed;
-  top: 60px;
+  top: 70px;
   right: 0;
-  width: 320px;
+  width: 300px;
   max-height: 70vh;
-  background: #f9e6ff;
+  background: #ffe0f7;
   border-left: 3px solid #bc1888;
   box-shadow: -4px 0 8px rgba(0,0,0,0.2);
   padding: 15px;
   overflow-y: auto;
   z-index: 1050;
-  display: none; /* oculto por defecto */
+  display: none;
   flex-direction: column;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -235,8 +236,8 @@ button:hover {
   background: none;
   border: none;
   font-size: 1.5rem;
-  cursor: pointer;
   color: #bc1888;
+  cursor: pointer;
 }
 
 .megusta-lista {
@@ -244,7 +245,6 @@ button:hover {
   padding-left: 0;
   margin-top: 10px;
   flex-grow: 1;
-  overflow-y: auto;
 }
 
 .megusta-lista li {
@@ -254,152 +254,80 @@ button:hover {
   color: #6a1b9a;
 }
 
-/* Info page */
-main.info {
-  display: flex;
-  gap: 20px;
-  padding: 20px 0;
-  margin-left: 20px;
-}
-
-/* Principal e info lateral más grande */
-main.info .principal {
-  flex: 3;
-}
-
-main.info .lateral {
-  flex: 1.5;
-  background-color: #f0e6ff;
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  flex-direction: column;
   padding: 20px;
-  border-radius: 8px;
-  box-sizing: border-box;
-  margin-right: 20px;
-  max-height: 400px; /* aumentado */
-  overflow-y: auto;
 }
 
-/* Botones redes sociales alineados */
-.botones-redes {
+.modal.activo {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
-  flex-wrap: wrap;
 }
 
-.boton-red {
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'IM Fell English SC', serif;
+.modal img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.modal-cerrar {
+  align-self: flex-end;
+  font-size: 2rem;
   color: white;
-  transition: background-color 0.3s;
-  display: inline-block;
-  text-align: center;
-}
-
-.boton-instagram {
-  background-color: #bc1888;
-}
-
-.boton-instagram:hover {
-  background-color: #a566c1;
-}
-
-.boton-facebook {
-  background-color: #3b5998;
-}
-
-.boton-facebook:hover {
-  background-color: #2d4373;
-}
-
-/* Foto equipo */
-.foto-equipo {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
-  margin-top: 20px;
-  display: block;
-  object-fit: cover;
-  margin-left: 20px;
-}
-
-/* Contacto */
-.contacto {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/miramar.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  padding: 30px 15px;
-  margin: 20px auto;
-  max-width: 100%;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(153, 102, 204, 0.3);
-  color: whitesmoke;
-}
-
-.contacto label,
-.contacto input,
-.contacto textarea,
-.contacto button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.contacto input,
-.contacto textarea {
-  border-radius: 8px;
-  border: none;
-  padding: 8px;
-  font-family: 'IM Fell English SC', serif;
-  font-size: 1rem;
-}
-
-.contacto button {
-  background-color: #bc1888;
-  border: none;
-  color: white;
-  font-weight: bold;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.contacto button:hover {
-  background-color: #a566c1;
+#modal-title {
+  margin-top: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  background-color: #ffe0f7;
+  border-top: 2px solid #d9b3ff;
+  color: #6a1b9a;
+  font-weight: bold;
+}
+
+footer a {
+  color: #bc1888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */
-@media (max-width: 800px) {
-  main.info {
-    flex-direction: column;
-    margin-left: 0;
-  }
-
-  .tarjetas-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
+@media (max-width: 600px) {
   .tarjeta {
-    flex: none;
     width: 90%;
   }
 
   header {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 
-  nav ul {
-    justify-content: center;
-    flex-grow: 1;
+  .carousel-btn {
+    font-size: 1.5rem;
   }
 
-  .logo {
-    height: 35px;
+  .hero {
+    height: 200px;
   }
 }
